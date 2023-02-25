@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+    <style>
+    body{
+     background: url("/static/images/a.jpg")50% no-repeat fixed;
+     }
+     </style>
+</head>
+<body>
+<form action="" method="POST">
+    {% csrf_token %}
+   <center>
+       <h1>FORM TO EXPLORE</h1>
+          <table >
+                <tr><td><label>First Name:</label></td>
+                    <td><input type="text" name="first_name" ><br><br></td></tr>
+                <tr><td><label>Last Name:</label></td>
+                    <td><input type="text" name="last_name" ><br><br></td></tr>
+                <tr><td><label>User Name:</label></td>
+                   <td><input type="text" name="username" ><br><br></td></tr>
+                <tr><td><label>Email:</label></td>
+                    <td><input type="email" name="email"><br><br></td></tr>
+                <tr><td><label>Password:</label></td>
+                    <td><input type="password" name="password"><br><br></td></tr>
+                <tr><td><label>Confirm Password:</label></td>
+                    <td><input type="password" name="password2"><br><br></td></tr>
+          </table>
+       <input type="submit" name="Submit">
+   </center>
+</form>
+<br><br>
+<div>
+    <ul>
+        <center>
+            {% for msg in messages %}
+            {{msg}}
+            {% endfor %}
+        </center>
+    </ul>
+</div>
+</body>
+</html>
